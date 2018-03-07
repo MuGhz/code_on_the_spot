@@ -43,7 +43,7 @@ def register(request):
             c = Client(username=username,password=password,displayName=displayName,secret=secret)
             c.save()
             userId = c.id
-            response{}
+            response={}
             response['status'] = 'ok'
             response['userId'] = userId
             response['displayName'] = displayName
