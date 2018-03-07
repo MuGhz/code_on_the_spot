@@ -8,3 +8,8 @@ class Client(models.Model):
     secret = models.TextField(default='')
     def __str__(self):
         return self.username
+class Token(models.Model):
+    username = models.CharField(max_length=40)
+    token = models.TextField()
+    def __str__(self):
+        return self.username
