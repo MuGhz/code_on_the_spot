@@ -7,7 +7,7 @@ import json, string, random, hmac, hashlib, base64
 def secret_generator(size=10,chars=string.ascii_uppercase + string.digits + string.ascii_lowercase):
     return ''.join(random.choice(chars) for _ in range(size))
 def encode_text(plaintext,secret):
-    return base64.b64encode(hmac.new(secret, msg=plaintextdigestmod=hashlib.sha256).digest())
+    return base64.b64encode(hmac.new(secret, msg=plaintext, digestmod=hashlib.sha256).digest())
 def md5_text(text):
     m = hashlib.md5(text.encode('utf-8'))
     return m.hexdigest()
